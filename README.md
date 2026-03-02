@@ -1,2 +1,2 @@
 # Elite-Edge-Fitness
-A Full Stack responsive gym website using MERN Stack.
+A fully responsive gym website made using MERN Stack.

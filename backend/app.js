@@ -1,12 +1,12 @@
 import express from "express";
-import { config } from "dotenv";
+import dotenv from "dotenv"
 import cors from "cors";
 import { sendEmail } from "./utils/sendEmail.js";
 
 const app = express();
 const router = express.Router();
 
-config({ path: "./config.env" });
+dotenv.config(); 
 
 app.use(
   cors({
@@ -21,6 +21,7 @@ app.use(express.urlencoded({ extended: true }));
 
 router.post("/send/mail", async (req, res, next) => {
   const { name, email, message } = req.body;
+  console.log(name,email,message)
   if (!name || !email || !message) {
     return next(
       res.status(400).json({

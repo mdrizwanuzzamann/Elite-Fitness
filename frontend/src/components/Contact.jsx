@@ -28,11 +28,11 @@ const Contact = () => {
       setName("");
       setEmail("");
       setMessage("");
-      toast.success(data.message);
+      toast.success(data.message);  
       setLoading(false);
     } catch (error) {
       setLoading(false);
-      toast.error(error.response.data.message);
+      toast.error(error.response?.data?.message || "Something went wrong!");
     }
   };
 

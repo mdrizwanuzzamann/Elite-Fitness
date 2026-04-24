@@ -6,12 +6,13 @@ import { sendEmail } from "./utils/sendEmail.js";
 const app = express();
 const router = express.Router();
 
-dotenv.config(); 
+dotenv.config();
+
 
 app.use(
   cors({
     origin: [process.env.FRONTEND_URL],
-    methods: ["POST"],  
+    methods: ["POST"],
     credentials: true,
   })
 );
@@ -21,7 +22,7 @@ app.use(express.urlencoded({ extended: true }));
 
 router.post("/send/mail", async (req, res, next) => {
   const { name, email, message } = req.body;
-  console.log(name,email,message)
+  console.log(name, email, message)
   if (!name || !email || !message) {
     return next(
       res.status(400).json({

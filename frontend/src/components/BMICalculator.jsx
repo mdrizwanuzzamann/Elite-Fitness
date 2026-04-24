@@ -19,11 +19,11 @@ const BMICalculator = () => {
     setBmi(bmiValue);
 
     if (bmiValue < 18.5) {
-      toast.warning("You are underweight. Consider seeking advice from a healthcare provider.");
+      toast.warning("You are underweight. Consider seeking advice from a healthcare professional.");
     } else if (bmiValue >= 18.5 && bmiValue < 24.9) {
       toast.success("You have normal weight. Keep maintaining a healthy lifestyle");
     } else if (bmiValue >= 25 && bmiValue < 29.9) {
-      toast.warning("You have overweight. Consider seeking advice from a healthcare provider.");
+      toast.warning("You have overweight. Consider seeking advice from a healthcare professional.");
     } else {
       toast.error(
         "You are in the obese range. It is recommended to seek advice from a professional healthcare specialist",

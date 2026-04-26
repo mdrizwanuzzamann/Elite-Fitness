@@ -1,18 +1,17 @@
 import express from "express";
 import dotenv from "dotenv"
+dotenv.config();
+
 import cors from "cors";
 import { sendEmail } from "./utils/sendEmail.js";
 
 const app = express();
 const router = express.Router();
 
-dotenv.config();
-
-
 app.use(
   cors({
-    origin: [process.env.FRONTEND_URL],
-    methods: ["POST"],
+    origin: process.env.FRONTEND_URL, 
+    methods: ["GET", "POST", "OPTIONS"],
     credentials: true,
   })
 );
@@ -33,7 +32,7 @@ router.post("/send/mail", async (req, res, next) => {
   }
   try {
     await sendEmail({
-      email: "mrizwanuzzaman56@gmail.com",
+      email: "mdrizwanuzzaman46@gmail.com",
       subject: "GYM WEBSITE CONTACT",
       message,
       userEmail: email,

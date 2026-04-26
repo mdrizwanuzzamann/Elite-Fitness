@@ -14,7 +14,7 @@ const Contact = () => {
     setLoading(true);
     try {
       const { data } = await axios.post(
-        `https://elite-fitness-frontend.onrender.com/send/mail`,
+        `http://localhost:4000/send/mail`,
         {
           name,
           email,
@@ -32,7 +32,7 @@ const Contact = () => {
       setLoading(false);
     } catch (error) {
       setLoading(false);
-      toast.error(error.response?.data?.message || "Something went wrong!");
+      toast.error(error.response?.data?.message);
     }
   };
 

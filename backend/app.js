@@ -10,14 +10,12 @@ const router = express.Router();
 
 app.use(
   cors({
-    origin: [
-      process.env.FRONTEND_URL,
-      "https://elite-fitness-frontend.netlify.app/",
-    ],
-    methods: ["GET", "POST", "OPTIONS"],
+    origin: "https://elite-fitness-frontend.onrender.com",
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     credentials: true,
-  }),
+  })
 );
+
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));

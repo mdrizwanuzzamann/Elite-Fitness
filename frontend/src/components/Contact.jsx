@@ -21,8 +21,7 @@ const Contact = () => {
           message,
         },
         {
-          withCredentials: true,
-          headers: { "Content-Type": "application/json" },
+            headers: { "Content-Type": "application/json" },
         }
       );
       setName("");

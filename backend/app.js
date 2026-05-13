@@ -11,12 +11,12 @@ const router = express.Router();
 app.use(
   cors({
     origin: "https://elite-fitness-frontend.onrender.com",
-    credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   }),
 );
 
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 router.post("/send/mail", async (req, res, next) => {
   const { name, email, message } = req.body;

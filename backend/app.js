@@ -1,5 +1,5 @@
 import express from "express";
-import dotenv from "dotenv"
+import dotenv from "dotenv";
 dotenv.config();
 
 import cors from "cors";
@@ -10,10 +10,13 @@ const router = express.Router();
 
 app.use(
   cors({
-    origin: process.env.FRONTEND_URL, 
+    origin: [
+      process.env.FRONTEND_URL,
+      "https://elite-fitness-frontend.netlify.app/",
+    ],
     methods: ["GET", "POST", "OPTIONS"],
     credentials: true,
-  })
+  }),
 );
 
 app.use(express.json());
@@ -21,13 +24,13 @@ app.use(express.urlencoded({ extended: true }));
 
 router.post("/send/mail", async (req, res, next) => {
   const { name, email, message } = req.body;
-  console.log(name, email, message)
+  console.log(name, email, message);
   if (!name || !email || !message) {
     return next(
       res.status(400).json({
         success: false,
         message: "Please provide all details",
-      })
+      }),
     );
   }
   try {

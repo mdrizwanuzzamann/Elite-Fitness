@@ -8,14 +8,7 @@ import { sendEmail } from "./utils/sendEmail.js";
 const app = express();
 const router = express.Router();
 
-app.use(
-  cors({
-    origin: "https://elite-fitness-frontend.onrender.com",
-    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-    credentials: true,
-  })
-);
-
+app.use(cors())
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));

@@ -10,7 +10,7 @@ const router = express.Router();
 
 app.use(
   cors({
-    origin: "https://elite-fitness-frontend.onrender.com",
+    origin: "http://localhost:4000",
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   }),
 );

@@ -10,7 +10,7 @@ const router = express.Router();
 
 app.use(
   cors({
-    origin: "http://localhost:4000",
+    origin: "https://elite-fitness-backend-gdqfkio5c-md-rizwanuzzamans-projects.vercel.app",
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   }),
 );

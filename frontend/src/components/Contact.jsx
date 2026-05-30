@@ -14,7 +14,7 @@ const Contact = () => {
     setLoading(true);
     try {
       const { data } = await axios.post(
-        `https://elite-fitness-av83dta6s-md-rizwanuzzamans-projects.vercel.app/send/mail`,
+        `http://localhost:4000`,
         {
           name,
           email,
